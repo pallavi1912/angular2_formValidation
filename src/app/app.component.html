@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+    <input formControlName="email" type="email" placeholder="Your email">
+    <small [hidden]="loginForm.controls.email.valid || (loginForm.controls.email.pristine && !submitted)" class="text-danger">
+            Email is required.
+          </small>
+    <input formControlName="password" type="password" placeholder="Your password">
+    dirty {{loginForm.dirty}}, touched {{loginForm.touched}}, valid {{loginForm.valid}}
+  <button type="submit" [disabled]="!loginForm.valid">Log in</button>
+</form>
