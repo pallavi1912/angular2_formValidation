@@ -1,9 +1,13 @@
-<form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+<form [formGroup]="registrationForm" (ngSubmit)="doRegister($event)">
     <input formControlName="email" type="email" placeholder="Your email">
-    <small [hidden]="loginForm.controls.email.valid || (loginForm.controls.email.pristine && !submitted)" class="text-danger">
+    <small [hidden]="registrationForm.controls.email.valid || (registrationForm.controls.email.pristine && !submitted)" class="text-danger">
             Email is required.
           </small>
+    <input formControlName="userName" type="userName" placeholder="Your userName">
+    <small [hidden]="registrationForm.controls.userName.valid || (registrationForm.controls.userName.pristine && !submitted)" class="text-danger">
+            User Name should have atmost 5 characters and must be alphabet
+          </small>      
     <input formControlName="password" type="password" placeholder="Your password">
-    dirty {{loginForm.dirty}}, touched {{loginForm.touched}}, valid {{loginForm.valid}}
-  <button type="submit" [disabled]="!loginForm.valid">Log in</button>
+    dirty {{registrationForm.dirty}}, touched {{registrationForm.touched}}, valid {{registrationForm.valid}}
+  <button type="submit" [disabled]="!registrationForm.valid">Register</button>
 </form>

@@ -12,15 +12,16 @@ export class AppComponent implements OnInit {
     public events: any[] = [];
 
     constructor(private _fb: FormBuilder) { }
-   public loginForm = this._fb.group({
+   public registrationForm = this._fb.group({
     email: ["", Validators.required],
+    userName:["",Validators.pattern('[A-Za-z]{5}')],
     password: ["", Validators.required]
   });
   ngOnInit(){
-  console.log(this.loginForm);
+  console.log(this.registrationForm);
   }
-  doLogin(event) {
+  doRegister(event) {
     console.log(event);
-    console.log(this.loginForm.value);
+    console.log(this.registrationForm.value);
   }
 }
