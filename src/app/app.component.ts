@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
    public registrationForm = this._fb.group({
     email: ["", Validators.required],
     userName:["",Validators.pattern('[A-Za-z]{5}')],
-    password: ["", Validators.required]
+    password: ["", Validators.required],
+    retypePassword:[""]
   });
   ngOnInit(){
   console.log(this.registrationForm);

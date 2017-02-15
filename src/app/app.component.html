@@ -9,5 +9,9 @@
           </small>      
     <input formControlName="password" type="password" placeholder="Your password">
     dirty {{registrationForm.dirty}}, touched {{registrationForm.touched}}, valid {{registrationForm.valid}}
+    <input formControlName="retypePassword" type="password" placeholder="Retype password" required validateEqual="password">
+    <small [hidden]="registrationForm.controls.retypePassword.valid || (registrationForm.controls.retypePassword.pristine && !submitted)" class="text-danger">
+            Mismatch problem
+          </small>  
   <button type="submit" [disabled]="!registrationForm.valid">Register</button>
 </form>
